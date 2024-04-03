@@ -1,0 +1,17 @@
+// protos/consulta_cep.proto
+syntax = "proto3";
+
+package consulta_cep;
+
+service Consulta {
+  rpc consultaCidadePorCep (Cep) returns (Cidade) {}
+  rpc consultaCepPorCidade (Cidade) returns (Cep) {}
+}
+
+message Cep {
+  string valor = 1;
+}
+
+message Cidade {
+  string nome = 1;
+}
